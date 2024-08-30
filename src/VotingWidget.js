@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, getDoc, setDoc, updateDoc, increment } from 'firebase/firestore';
 
+
+// config data
 const firebaseConfig = {
     apiKey: "AIzaSyCD8DZtKNeaHyFHOB55G3ONtbZa_C3fs8o",
     authDomain: "vote-9919f.firebaseapp.com",
