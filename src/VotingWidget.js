@@ -144,6 +144,7 @@ const VotingWidget = () => {
                     Thank you for voting!
                 </div>
             )} */}
+            <h4>cat</h4>
         </div>
     );
 };
