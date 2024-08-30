@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, getDoc, setDoc, updateDoc, increment } from 'firebase/firestore';
 
-
-// config data
 const firebaseConfig = {
     apiKey: "AIzaSyCD8DZtKNeaHyFHOB55G3ONtbZa_C3fs8o",
     authDomain: "vote-9919f.firebaseapp.com",
@@ -83,14 +81,15 @@ const VotingWidget = () => {
     const colors = ['#03a103', '#d11f43', '#87f266', '#e33434'];
 
     return (
+        
         <div className="voting-widget" style={{ width: '300px', height: '250px', padding: '20px', border: '1px solid #ddd', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', backgroundColor: '#f9f9f9' }}>
-            <h2 style={{ textAlign: 'center' }}>Vote for President</h2>
+            <h3 style={{ textAlign: 'center' }}>Vote for President</h3>
             {candidates.map((candidate, index) => (
                 <div
                     key={candidate}
                     onClick={!hasVoted?() => vote(candidate):null}
                     style={{
-                        marginBottom: '15px',
+                        marginBottom: '10px',
                         padding: '10px',
                         borderRadius: '5px',
                         position: 'relative',
@@ -98,7 +97,7 @@ const VotingWidget = () => {
                         cursor: hasVoted?"not-allowed": 'pointer',
                         display: 'flex',
                         alignItems: 'center',
-                        fontSize: '16px',
+                        fontSize: '12px',
                         transition: 'background-color 0.3s ease',
                         backgroundColor: hasVoted ? '#f1f1f1' : '#fff',
                     }}
@@ -115,13 +114,18 @@ const VotingWidget = () => {
                             backgroundColor:hasVoted? colors[index]:"#ddd",
                             zIndex: 0
                         }}
+                        
                     />
 
                    <div style={{ position: 'relative', zIndex: 1, flexGrow: 1, textAlign: 'center', fontWeight: 'bold', color: '#333' }}>
                         {hasVoted ? `${candidate} - ${calculatePercentage(votes[candidate])}%` : fullNames[candidate]}
+                        
                     </div>
+                    
                 </div>
+                
             ))}
+            
             {/* {hasVoted && (
                 <div
                     style={{
@@ -144,7 +148,7 @@ const VotingWidget = () => {
                     Thank you for voting!
                 </div>
             )} */}
-            <h4>cat</h4>
+            <a href="https://adstudio.cloud/" style={{color:"gray", textAlign:"center", textDecoration:"none"}}>More Detils</a>
         </div>
     );
 };
