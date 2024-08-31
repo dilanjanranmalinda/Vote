@@ -83,14 +83,14 @@ const VotingWidget = () => {
     return (
         
         <div className="voting-widget" style={{ width: '300px', height: '250px', padding: '20px', border: '1px solid #ddd', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', backgroundColor: '#f9f9f9' }}>
-            <h3 style={{ textAlign: 'center' }}>Vote for President</h3>
+            <h4 style={{ textAlign: 'center' }}> Presidental election 2024<br></br> Vote for President</h4>
             {candidates.map((candidate, index) => (
                 <div
                     key={candidate}
                     onClick={!hasVoted?() => vote(candidate):null}
                     style={{
-                        marginBottom: '10px',
-                        padding: '10px',
+                        marginBottom: '6px',
+                        padding: '8px',
                         borderRadius: '5px',
                         position: 'relative',
                         backgroundColor: '#fff',
@@ -148,7 +148,7 @@ const VotingWidget = () => {
                     Thank you for voting!
                 </div>
             )} */}
-            <a href="https://adstudio.cloud/" style={{color:"gray", textAlign:"center", textDecoration:"none"}}>More Detils</a>
+            <a href="https://adstudio.cloud/" style={{color:"gray", textAlign:"center", textDecoration:"none", fontSize:"14px"}}>More Detils</a>
         </div>
     );
 };
